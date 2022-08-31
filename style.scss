@@ -1,0 +1,256 @@
+@import "reset.css";
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+* {
+  font-family: "Spoqa Han Sans Neo" !important;
+  button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 0;
+  }
+  input {
+    caret-color: black;
+  }
+  input::placeholder {
+    color: #b5bac4;
+  }
+  textarea::placeholder {
+    color: #b5bac4;
+  }
+  box-sizing: border-box;
+}
+@mixin set($color, $width, $height) {
+  background-color: $color;
+  width: $width;
+  height: $height;
+}
+body {
+  background-color: #eff0f5;
+}
+header {
+  position: absolute;
+  top: 0;
+  z-index: 100;
+  @include set(white, 100%, 120px);
+  position: fixed;
+  border-bottom: 1px solid #eff0f5;
+  .container {
+    @include set(none, 720px, 40px);
+    display: flex;
+    margin: auto;
+    margin-top: 30px;
+    .logo {
+      width: 132px;
+      height: 40px;
+    }
+    .seach {
+      @include set(white, 490px, 32px);
+      position: relative;
+      margin: auto;
+      margin-left: 20px;
+      display: flex;
+      align-items: center;
+      border: 1px solid #dadce1;
+      border-radius: 2px;
+      input {
+        position: relative;
+        margin-left: 12px;
+        width: 446px;
+        height: 18px;
+        color: #111111;
+        background: none;
+      }
+      button {
+      }
+    }
+    .location {
+      @include set(none, 48px, 36px);
+      position: relative;
+      margin: auto 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      p {
+        font-size: 0.5rem;
+        color: #4154ff;
+      }
+    }
+  }
+  .category {
+    position: relative;
+    margin: auto;
+    margin-top: 8px;
+    .nav {
+      position: relative;
+      margin: auto;
+      // background-color: #dee1ec;
+      width: 720px;
+      height: 42px;
+      display: flex;
+      justify-content: center;
+      li {
+        display: inline-flex;
+        a {
+          font-size: 0.75rem;
+          padding: 12px;
+          display: inline;
+          color: #111111;
+        }
+        .active {
+          color: #4154ff;
+          border-bottom: #4154ff solid 4px;
+        }
+        :hover {
+          color: #4154ff;
+        }
+      }
+    }
+  }
+}
+main {
+  position: relative;
+  top: 120px;
+  padding-top: 24px;
+  margin: auto;
+  width: 720px;
+  height: 3000px;
+  // background-color: #dadce1;
+  .banner_area {
+    position: relative;
+    // background-color: white;
+    width: 100%;
+    height: 180px;
+    display: flex;
+    overflow-x: auto;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    .banner_item {
+      flex-shrink: 0;
+      margin-right: 12px;
+      background-color: rgb(238, 229, 229);
+      width: 360px;
+      height: 180px;
+      display: flex;
+      flex-direction: column;
+      border-radius: 8px;
+      > button {
+        width: inherit;
+        height: inherit;
+        .banner_item_title {
+          z-index: 2;
+          display: flex;
+          align-items: flex-end;
+          position: relative;
+          margin-top: 115px;
+          margin-left: 26px;
+          h3 {
+            color: white;
+            font-weight: 500;
+          }
+          img {
+            width: 16px;
+            height: 16px;
+            margin-left: 4px;
+          }
+          h5 {
+            color: white;
+            font-weight: 400;
+          }
+        }
+        .banner_item_tag {
+          z-index: 2;
+          position: relative;
+          color: white;
+          margin-top: 4px;
+          margin-left: 26px;
+          ul {
+            display: flex;
+            li {
+              margin-right: 4px;
+              h5 {
+                font-weight: 500;
+              }
+            }
+          }
+        }
+        .banner_item_gradient {
+          position: absolute;
+          top: 0;
+          transform: translateY(100%);
+          z-index: 1;
+          width: inherit;
+          height: 50%;
+          background: linear-gradient(to bottom, #00000000, rgb(0, 0, 0));
+          opacity: 0.8;
+          border-radius: 8px;
+        }
+        .banner_item_image {
+          display: flex;
+          align-items: center;
+          position: absolute;
+          top: 0px;
+          width: inherit;
+          height: inherit;
+          border-radius: 8px;
+        }
+      }
+    }
+    #banner_item_image1 {
+      position: absolute;
+      top: 0;
+      width: inherit;
+      height: inherit;
+      background-image: url(/asset/seungwon-choo-LJzsqvtqESY-unsplash.jpg);
+      background-size: cover;
+      background-position: center;
+      border-radius: 8px;
+    }
+    #banner_item_image2 {
+      position: absolute;
+      top: 0;
+      width: inherit;
+      height: inherit;
+      background-image: url(/asset/haley-truong-ka-1yd6spSE-unsplash.jpg);
+      background-size: cover;
+      background-position: center;
+      border-radius: 8px;
+    }
+  }
+  .hot_menu_area{
+    position: relative;
+    margin-top: 20px;
+    width: 100%;
+    height: 280px;
+    background-color: white;
+    border: #EFF0F5 solid 1px;
+  }
+  .hot_place_area{
+    position: relative;
+    margin-top: 20px;
+    width: 100%;
+    height: 280px;
+    background-color: white;
+    border: #EFF0F5 solid 1px;
+  }
+  .recommend_section{
+    display: flex;
+    justify-content: space-between;
+    .recommend_list{
+      position: relative;
+      margin-top: 20px;
+      width: 355px;
+      height: 280px;
+      background-color: white;
+      border: #EFF0F5 solid 1px;
+    }
+    .keyword_map{
+      position: relative;
+      margin-top: 20px;
+      width: 355px;
+      height: 280px;
+      background-color: white;
+      border: #EFF0F5 solid 1px;
+    }
+  }
+}
